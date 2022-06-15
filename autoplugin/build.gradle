@@ -1,0 +1,32 @@
+plugins {
+    id 'java-library'
+    id 'groovy'
+    id 'maven'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+dependencies {
+    implementation fileTree(include:['*.jar','*.aar'], dir:'libs')
+    implementation files('D:/sdk/a_sdk/jre_1.8/lib/rt.jar')
+    implementation 'com.google.auto.service:auto-service:1.0-rc3'
+    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc3'
+    implementation localGroovy()
+}
+/*
+group = 'com.plugin.test'
+version = '9.0.3_tx'
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            //本地的Maven地址:当前工程下
+            repository(url: uri('./pluginBinary'))
+            //提交到远程服务器：
+            // repository(url: "http://www.??.com/") {
+            // authentication(userName: "name", password: "password")
+            // }
+        }
+    }
+}*/
