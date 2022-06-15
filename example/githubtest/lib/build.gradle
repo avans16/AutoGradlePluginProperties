@@ -1,0 +1,22 @@
+plugins {
+    id 'java-library'
+    id 'org.jetbrains.kotlin.jvm'
+    id 'groovy'
+    id 'kotlin-kapt'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_7
+    targetCompatibility = JavaVersion.VERSION_1_7
+}
+dependencies {
+    //gradle sdk
+    implementation gradleApi()
+    //groovy sdk
+    implementation localGroovy()
+    compileOnly 'com.github.avans16:AutoGradlePluginProperties:1.0-r1'
+    //android project need add into annotationProcessor
+    annotationProcessor 'com.github.avans16:AutoGradlePluginProperties:1.0-r1'
+    //add kotlin annotationProcessor if language if kotlin
+    kapt 'com.github.avans16:AutoGradlePluginProperties:1.0-r1'
+}
