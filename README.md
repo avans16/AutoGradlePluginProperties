@@ -1,5 +1,5 @@
 # AutoGradlePluginProperties
-Use to generate a gradle plugin properties file on META-INF/gradle-plugins/xxxx.properties
+Use to generate a gradle plugin properties file   ->   "META-INF/gradle-plugins/xxxx.properties
 
 Use annotation @AutoPlugin to flag where need to create
 @AutoPlugin has two params 
