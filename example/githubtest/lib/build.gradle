@@ -3,7 +3,9 @@ plugins {
     id 'org.jetbrains.kotlin.jvm'
     id 'groovy'
     id 'kotlin-kapt'
+    id 'maven-publish'
 }
+
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_7
@@ -19,4 +21,24 @@ dependencies {
     annotationProcessor 'com.github.avans16:AutoGradlePluginProperties:1.0-r1'
     //add kotlin annotationProcessor if language if kotlin
     kapt 'com.github.avans16:AutoGradlePluginProperties:1.0-r1'
+}
+publishing {
+    repositories {
+        maven {
+            /* credentials {
+                 username 'username'
+                 password 'password'
+             }*/
+            url uri('./gradlePlugin')
+        }
+    }
+    publications {
+        maven(MavenPublication) {
+            groupId 'com.team.gradlePlugin'
+            artifactId 'customPlugin'
+            version '1.0.0'
+            description 'xxx gradle plugin'
+            from components.java
+        }
+    }
 }
