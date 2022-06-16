@@ -2,16 +2,17 @@
 Use to generate a gradle plugin properties file   ->   "META-INF/gradle-plugins/xxxx.properties
 
 Use annotation @AutoPlugin to flag where need to create
-@AutoPlugin has two params 
-@param id ; gradle plugin id
-@param value ;
+{@AutoPlugin has two params 
+@param id ; 
+@param value ;}
 
 Example:
 
 1: generate com.team.android.plugin.properties
 
 @AutoPlugin(id = "com.team.android.plugin", value = Plugin.class)
-class beanPlugin implements Plugin<Project> {
+
+pubil class beanPlugin implements Plugin<Project> {
 
     public beanPlugin(ToolingModelBuilderRegistry registry) {
 
@@ -22,11 +23,14 @@ class beanPlugin implements Plugin<Project> {
         project.tasks.create('myhello', GreetingTask)
     }
 }
-
+	
+	
 Or
 
 2: generate $package.beanPlugin.properties
+	
 @AutoPlugin(Plugin.class)
+	
 class beanPlugin implements Plugin<Project> {
 
     public beanPlugin(ToolingModelBuilderRegistry registry) {
